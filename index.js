@@ -1,5 +1,6 @@
-let result = 0;
-let operation ;
+
+let currentValue = 0;
+let operation = "";
 let input = document.getElementById("input");
 let button1 = document.getElementById("button1");
 let button2 = document.getElementById("button2");
@@ -17,6 +18,7 @@ let buttonMultiply = document.getElementById("buttonMultiply");
 let buttonDivide = document.getElementById("buttonDivide");
 let buttonEqual = document.getElementById("buttonEqual");
 let buttonReset = document.getElementById("buttonReset");
+
 
 function addNumber1() {
     input.value += 1;
@@ -59,62 +61,137 @@ function addNumber0() {
 }
 
 
-
 function plus() {
-    operation = "+";
-    number1 = +(input.value);
-    input.value = "";
+    switch (operation) {
+        case "+" :
+        case "*" :
+        case "/" :
+        case "-" :
+            operation = "+";
+            currentValue += +(input.value);
+            input.value = "";
+            break;
+        case "=" :
+            operation = "+";
+            currentValue = +(input.value);
+            input.value = "";
+            break;
+        case "" :
+            operation = "+";
+            currentValue = +(input.value);
+            input.value = "";
+            break;
+    }
 }
+
 function minus() {
-    operation = "-";
-    number1 = +(input.value);
-    input.value = "";
+    switch (operation) {
+        case "+" :
+        case "*" :
+        case "/" :
+        case "-" :
+            operation = "-";
+            currentValue -= +(input.value);
+            input.value = "";
+            break;
+        case "=" :
+            operation = "-";
+            currentValue = +(input.value);
+            input.value = "";
+            break;
+        case "" :
+            operation = "-";
+            currentValue = +(input.value);
+            input.value = "";
+            break;
+    }
 }
+
 function multiply() {
-    operation = "*";
-    number1 = +(input.value);
-    input.value = "";
+    switch (operation) {
+        case "+" :
+        case "*" :
+        case "/" :
+        case "-" :
+            operation = "*";
+            currentValue *= +(input.value);
+            input.value = "";
+            break;
+        case "=" :
+            operation = "*";
+            currentValue = +(input.value);
+            input.value = "";
+            break;
+        case "" :
+            operation = "*";
+            currentValue = +(input.value);
+            input.value = "";
+            break;
+    }
 }
+
 function divide() {
-    operation = "/";
-    number1 = +(input.value);
-    input.value = "";
+    switch (operation) {
+        case "+" :
+        case "*" :
+        case "/" :
+        case "-" :
+            operation = "/";
+            currentValue /= +(input.value);
+            input.value = "";
+            break;
+        case "=" :
+            operation = "/";
+            currentValue = +(input.value);
+            input.value = "";
+            break;
+        case "" :
+            operation = "/";
+            currentValue = +(input.value);
+            input.value = "";
+            break;
+    }
 }
 
 
 function equal() {
     switch (operation) {
         case "+" :
-            input.value = number1 + +(input.value);
+            input.value = currentValue + +(input.value);
+            currentValue = +(input.value);
+            operation = "=";
             break;
         case "-" :
-            input.value = number1 - +(input.value);
+            input.value = currentValue - +(input.value);
+            currentValue = +(input.value);
+            operation = "=";
             break;
         case "*" :
-            input.value = number1 * +(input.value);
+            input.value = currentValue * +(input.value);
+            currentValue = +(input.value);
+            operation = "=";
             break;
         case "/" :
-            input.value = number1 / +(input.value);
-            break;
-        case "+" :
-            input.value = number1 + +(input.value);
+            input.value = currentValue / +(input.value);
+            currentValue = +(input.value);
+            operation = "=";
             break;
     }
 }
+
 function reset() {
     input.value = "";
-    result = 0;
+    currentValue = 0;
+    operation = "";
 }
+
+
 buttonPlus.addEventListener("click", plus);
 buttonMinus.addEventListener("click", minus);
 buttonMultiply.addEventListener("click", multiply);
 buttonDivide.addEventListener("click", divide);
 buttonEqual.addEventListener("click", equal);
 buttonReset.addEventListener("click", reset);
-
-
-
-
 
 
 button1.addEventListener("click", addNumber1);
