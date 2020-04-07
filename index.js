@@ -1,15 +1,129 @@
-let num1 = +prompt("Enter your first number","");
-let num2 = +prompt("Enter your second number","");
-let action = prompt("Enter your action","+");
+let result = 0;
+let operation ;
+let input = document.getElementById("input");
+let button1 = document.getElementById("button1");
+let button2 = document.getElementById("button2");
+let button3 = document.getElementById("button3");
+let button4 = document.getElementById("button4");
+let button5 = document.getElementById("button5");
+let button6 = document.getElementById("button6");
+let button7 = document.getElementById("button7");
+let button8 = document.getElementById("button8");
+let button9 = document.getElementById("button9");
+let button0 = document.getElementById("button0");
+let buttonPlus = document.getElementById("buttonPlus");
+let buttonMinus = document.getElementById("buttonMinus");
+let buttonMultiply = document.getElementById("buttonMultiply");
+let buttonDivide = document.getElementById("buttonDivide");
+let buttonEqual = document.getElementById("buttonEqual");
+let buttonReset = document.getElementById("buttonReset");
 
-if (action === "+") {
-    alert(num1 + num2);
-}else if (action === "-") {
-    alert(num1 - num2);
-}else if (action === "*") {
-    alert(num1 * num2);
-}else if (action === "/") {
-    alert(num1 / num2);
-}else {
-    alert("Wrong action or number!")
-};
+function addNumber1() {
+    input.value += 1;
+}
+
+function addNumber2() {
+    input.value += 2;
+}
+
+function addNumber3() {
+    input.value += 3;
+}
+
+function addNumber4() {
+    input.value += 4;
+}
+
+function addNumber5() {
+    input.value += 5;
+}
+
+function addNumber6() {
+    input.value += 6;
+}
+
+function addNumber7() {
+    input.value += 7;
+}
+
+function addNumber8() {
+    input.value += 8;
+}
+
+function addNumber9() {
+    input.value += 9;
+}
+
+function addNumber0() {
+    input.value += 0;
+}
+
+
+
+function plus() {
+    operation = "+";
+    number1 = +(input.value);
+    input.value = "";
+}
+function minus() {
+    operation = "-";
+    number1 = +(input.value);
+    input.value = "";
+}
+function multiply() {
+    operation = "*";
+    number1 = +(input.value);
+    input.value = "";
+}
+function divide() {
+    operation = "/";
+    number1 = +(input.value);
+    input.value = "";
+}
+
+
+function equal() {
+    switch (operation) {
+        case "+" :
+            input.value = number1 + +(input.value);
+            break;
+        case "-" :
+            input.value = number1 - +(input.value);
+            break;
+        case "*" :
+            input.value = number1 * +(input.value);
+            break;
+        case "/" :
+            input.value = number1 / +(input.value);
+            break;
+        case "+" :
+            input.value = number1 + +(input.value);
+            break;
+    }
+}
+function reset() {
+    input.value = "";
+    result = 0;
+}
+buttonPlus.addEventListener("click", plus);
+buttonMinus.addEventListener("click", minus);
+buttonMultiply.addEventListener("click", multiply);
+buttonDivide.addEventListener("click", divide);
+buttonEqual.addEventListener("click", equal);
+buttonReset.addEventListener("click", reset);
+
+
+
+
+
+
+button1.addEventListener("click", addNumber1);
+button2.addEventListener("click", addNumber2);
+button3.addEventListener("click", addNumber3);
+button4.addEventListener("click", addNumber4);
+button5.addEventListener("click", addNumber5);
+button6.addEventListener("click", addNumber6);
+button7.addEventListener("click", addNumber7);
+button8.addEventListener("click", addNumber8);
+button9.addEventListener("click", addNumber9);
+button0.addEventListener("click", addNumber0);
