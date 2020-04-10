@@ -12,6 +12,8 @@ let button7 = document.getElementById("button7");
 let button8 = document.getElementById("button8");
 let button9 = document.getElementById("button9");
 let button0 = document.getElementById("button0");
+let buttonDot = document.getElementById("buttonDot");
+let buttonDelete = document.getElementById("buttonDelete");
 let buttonPlus = document.getElementById("buttonPlus");
 let buttonMinus = document.getElementById("buttonMinus");
 let buttonMultiply = document.getElementById("buttonMultiply");
@@ -20,55 +22,66 @@ let buttonEqual = document.getElementById("buttonEqual");
 let buttonReset = document.getElementById("buttonReset");
 
 
+
 function addNumber1() {
     input.value += 1;
 }
-
 function addNumber2() {
     input.value += 2;
 }
-
 function addNumber3() {
     input.value += 3;
 }
-
 function addNumber4() {
     input.value += 4;
 }
-
 function addNumber5() {
     input.value += 5;
 }
-
 function addNumber6() {
     input.value += 6;
 }
-
 function addNumber7() {
     input.value += 7;
 }
-
 function addNumber8() {
     input.value += 8;
 }
-
 function addNumber9() {
     input.value += 9;
 }
-
 function addNumber0() {
     input.value += 0;
+}
+function addDot() {
+    input.value += ".";
+}
+function asd() {
+    input.value /= 10;
+    input.value = Math.floor(input.value);
 }
 
 
 function plus() {
     switch (operation) {
         case "+" :
-        case "*" :
-        case "/" :
-        case "-" :
             operation = "+";
             currentValue += +(input.value);
+            input.value = "";
+            break;
+        case "-" :
+            operation = "+";
+            currentValue -= +(input.value);
+            input.value = "";
+            break;
+        case "*" :
+            operation = "+";
+            currentValue *= +(input.value);
+            input.value = "";
+            break;
+        case "/" :
+            operation = "+";
+            currentValue /= +(input.value);
             input.value = "";
             break;
         case "=" :
@@ -87,11 +100,23 @@ function plus() {
 function minus() {
     switch (operation) {
         case "+" :
-        case "*" :
-        case "/" :
+            operation = "-";
+            currentValue += +(input.value);
+            input.value = "";
+            break;
         case "-" :
             operation = "-";
             currentValue -= +(input.value);
+            input.value = "";
+            break;
+        case "*" :
+            operation = "-";
+            currentValue *= +(input.value);
+            input.value = "";
+            break;
+        case "/" :
+            operation = "-";
+            currentValue /= +(input.value);
             input.value = "";
             break;
         case "=" :
@@ -110,11 +135,23 @@ function minus() {
 function multiply() {
     switch (operation) {
         case "+" :
-        case "*" :
-        case "/" :
+            operation = "*";
+            currentValue += +(input.value);
+            input.value = "";
+            break;
         case "-" :
             operation = "*";
+            currentValue -= +(input.value);
+            input.value = "";
+            break;
+        case "*" :
+            operation = "*";
             currentValue *= +(input.value);
+            input.value = "";
+            break;
+        case "/" :
+            operation = "*";
+            currentValue /= +(input.value);
             input.value = "";
             break;
         case "=" :
@@ -133,9 +170,21 @@ function multiply() {
 function divide() {
     switch (operation) {
         case "+" :
-        case "*" :
-        case "/" :
+            operation = "/";
+            currentValue += +(input.value);
+            input.value = "";
+            break;
         case "-" :
+            operation = "/";
+            currentValue -= +(input.value);
+            input.value = "";
+            break;
+        case "*" :
+            operation = "/";
+            currentValue *= +(input.value);
+            input.value = "";
+            break;
+        case "/" :
             operation = "/";
             currentValue /= +(input.value);
             input.value = "";
@@ -204,3 +253,5 @@ button7.addEventListener("click", addNumber7);
 button8.addEventListener("click", addNumber8);
 button9.addEventListener("click", addNumber9);
 button0.addEventListener("click", addNumber0);
+buttonDot.addEventListener("click", addDot);
+buttonDelete.addEventListener("click", asd);
