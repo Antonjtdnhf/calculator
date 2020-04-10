@@ -13,7 +13,7 @@ let button8 = document.getElementById("button8");
 let button9 = document.getElementById("button9");
 let button0 = document.getElementById("button0");
 let buttonDot = document.getElementById("buttonDot");
-let buttonDelete = document.getElementById("buttonDelete");
+let buttonBackspace = document.getElementById("buttonBackspace");
 let buttonPlus = document.getElementById("buttonPlus");
 let buttonMinus = document.getElementById("buttonMinus");
 let buttonMultiply = document.getElementById("buttonMultiply");
@@ -56,9 +56,15 @@ function addNumber0() {
 function addDot() {
     input.value += ".";
 }
-function asd() {
-    input.value /= 10;
-    input.value = Math.floor(input.value);
+function backspace() {
+    var stringToCut;
+    stringToCut = String(input.value);
+    var cutedString = stringToCut.substring(0, stringToCut.length - 1);
+    if (+cutedString === 0) {
+        input.value = "";
+    } else {
+        input.value = +cutedString;
+    }
 }
 
 
@@ -254,4 +260,4 @@ button8.addEventListener("click", addNumber8);
 button9.addEventListener("click", addNumber9);
 button0.addEventListener("click", addNumber0);
 buttonDot.addEventListener("click", addDot);
-buttonDelete.addEventListener("click", asd);
+buttonBackspace.addEventListener("click", backspace);
