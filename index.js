@@ -34,7 +34,7 @@ function backspace() {
     if (+cutedString === 0) {
         input.value = "";
     } else {
-        input.value = +cutedString;
+        input.value = cutedString;
     }
 }
 
