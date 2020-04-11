@@ -1,4 +1,3 @@
-
 let currentValue = 0;
 let operation = "";
 let input = document.getElementById("input");
@@ -22,40 +21,12 @@ let buttonEqual = document.getElementById("buttonEqual");
 let buttonReset = document.getElementById("buttonReset");
 
 
+function addElementToInput( eventObject ) {
+    let clickedButton = eventObject.currentTarget;
+    input.value += clickedButton.innerHTML;
+}
 
-function addNumber1() {
-    input.value += 1;
-}
-function addNumber2() {
-    input.value += 2;
-}
-function addNumber3() {
-    input.value += 3;
-}
-function addNumber4() {
-    input.value += 4;
-}
-function addNumber5() {
-    input.value += 5;
-}
-function addNumber6() {
-    input.value += 6;
-}
-function addNumber7() {
-    input.value += 7;
-}
-function addNumber8() {
-    input.value += 8;
-}
-function addNumber9() {
-    input.value += 9;
-}
-function addNumber0() {
-    input.value += 0;
-}
-function addDot() {
-    input.value += ".";
-}
+
 function backspace() {
     var stringToCut;
     stringToCut = String(input.value);
@@ -66,6 +37,7 @@ function backspace() {
         input.value = +cutedString;
     }
 }
+
 
 
 function plus() {
@@ -249,15 +221,17 @@ buttonEqual.addEventListener("click", equal);
 buttonReset.addEventListener("click", reset);
 
 
-button1.addEventListener("click", addNumber1);
-button2.addEventListener("click", addNumber2);
-button3.addEventListener("click", addNumber3);
-button4.addEventListener("click", addNumber4);
-button5.addEventListener("click", addNumber5);
-button6.addEventListener("click", addNumber6);
-button7.addEventListener("click", addNumber7);
-button8.addEventListener("click", addNumber8);
-button9.addEventListener("click", addNumber9);
-button0.addEventListener("click", addNumber0);
-buttonDot.addEventListener("click", addDot);
+
+
+button1.addEventListener("click", addElementToInput);
+button2.addEventListener("click", addElementToInput);
+button3.addEventListener("click", addElementToInput);
+button4.addEventListener("click", addElementToInput);
+button5.addEventListener("click", addElementToInput);
+button6.addEventListener("click", addElementToInput);
+button7.addEventListener("click", addElementToInput);
+button8.addEventListener("click", addElementToInput);
+button9.addEventListener("click", addElementToInput);
+button0.addEventListener("click", addElementToInput);
+buttonDot.addEventListener("click", addElementToInput);
 buttonBackspace.addEventListener("click", backspace);
