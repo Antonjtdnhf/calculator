@@ -1,14 +1,39 @@
+body{
+    background-color:mistyrose;
+}
 .app_wrapper {
-    border: 3px solid ;
-    width: 300px;
-    height: 300px;
+    border: none;
+    width: 250px;
+    height: 200px;
     margin: 0 auto;
+    margin-top: 100px;
+    padding: 30px 50px 30px 50px;
+    border: 3px dashed hotpink;
+    border-radius: 30px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4 ,25%);
+    grid-gap:10px;
+    justify-content: center;
 
 }
+.numbersWrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: 2/1/5/4;
+}
+#buttonDivide{
+    grid-column-start: 4;
+}
+#buttonEqual{
+    grid-area: 5/1/5/4;
+}
+#input{
+    grid-column:1/4 ;
+
+}
+
 .app_wrapper button {
+    background-color:lightcyan;
 
 }
