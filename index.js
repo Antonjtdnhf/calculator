@@ -22,7 +22,7 @@ let buttonEqual = document.getElementById("buttonEqual");
 let buttonReset = document.getElementById("buttonReset");
 
 
-function addElementToInput( eventObject ) {
+function addNumbersToInput( eventObject ) {
     let clickedButton = eventObject.currentTarget;
     input.value += clickedButton.innerHTML;
 }
@@ -224,15 +224,16 @@ buttonReset.addEventListener("click", reset);
 
 
 
-button1.addEventListener("click", addElementToInput);
-button2.addEventListener("click", addElementToInput);
-button3.addEventListener("click", addElementToInput);
-button4.addEventListener("click", addElementToInput);
-button5.addEventListener("click", addElementToInput);
-button6.addEventListener("click", addElementToInput);
-button7.addEventListener("click", addElementToInput);
-button8.addEventListener("click", addElementToInput);
-button9.addEventListener("click", addElementToInput);
-button0.addEventListener("click", addElementToInput);
-buttonDot.addEventListener("click", addElementToInput);
+button1.addEventListener("click", addNumbersToInput);
+button2.addEventListener("click", addNumbersToInput);
+button3.addEventListener("click", addNumbersToInput);
+button4.addEventListener("click", addNumbersToInput);
+button5.addEventListener("click", addNumbersToInput);
+button6.addEventListener("click", addNumbersToInput);
+button7.addEventListener("click", addNumbersToInput);
+button8.addEventListener("click", addNumbersToInput);
+button9.addEventListener("click", addNumbersToInput);
+button0.addEventListener("click", addNumbersToInput);
+buttonDot.addEventListener("click", addNumbersToInput);
+
 buttonBackspace.addEventListener("click", backspace);
