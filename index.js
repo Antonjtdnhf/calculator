@@ -1,6 +1,7 @@
 let currentValue = 0;
 let operation = "";
 let input = document.getElementById("input");
+
 let button1 = document.getElementById("button1");
 let button2 = document.getElementById("button2");
 let button3 = document.getElementById("button3");
